@@ -1,0 +1,36 @@
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Control</title>
+</head>
+<body>
+    <p id="targetParagraph" style="border: 2px solid black; padding: 10px;">
+        We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.
+    </p>
+
+    <label for="textColor">Text Color (RGB): </label>
+    <input type="text" id="textColor" placeholder="e.g. 255,0,0" oninput="updateColors()">
+
+    <label for="borderColor">Border Color (RGB): </label>
+    <input type="text" id="borderColor" placeholder="e.g. 0,0,255" oninput="updateColors()">
+
+    <label for="borderWidth">Border Width (px): </label>
+    <input type="number" id="borderWidth" value="2" oninput="updateColors()">
+
+    <script>
+        function updateColors() {
+            let paragraph = document.getElementById('targetParagraph');
+            
+            let textColorValue = document.getElementById('textColor').value;
+            let borderColorValue = document.getElementById('borderColor').value;
+            let borderWidthValue = document.getElementById('borderWidth').value;
+
+            paragraph.style.color = `rgb(${textColorValue})`;
+            paragraph.style.borderColor = `rgb(${borderColorValue})`;
+            paragraph.style.borderWidth = `${borderWidthValue}px`;
+        }
+    </script>
+</body>
+</html>
